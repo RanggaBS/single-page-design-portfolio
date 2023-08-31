@@ -11,7 +11,7 @@ document.title = "Single page design portfolio";
 
 function App() {
 	return (
-		<div className="min-h-screen app">
+		<div className="min-h-screen app overflow-hidden">
 			<Navbar />
 			<main className="space-y-24">
 				<Intro />
