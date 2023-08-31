@@ -47,9 +47,9 @@ const skillsData = [
 
 const Intro = () => {
 	return (
-		<section className="intro">
-			<header className="text-center heading">
-				<h1 className="pb-4 text-4xl font-bold">
+		<section className="intro pt-4">
+			<header className="text-center heading md:pb-8">
+				<h1 className="pb-4 text-4xl font-bold md:text-5xl md:pb-8">
 					Design solutions made easy
 				</h1>
 				<p className="font-medium">
@@ -58,7 +58,7 @@ const Intro = () => {
 					needs.
 				</p>
 			</header>
-			<div className="grid grid-cols-2 gap-4 pt-6 font-bold skills">
+			<div className="grid grid-cols-2 gap-4 pt-6 font-bold skills md:grid-rows-3 md:grid-cols-4 lg:grid-cols-6">
 				{skillsData.map((skill, index) => {
 					return (
 						<Skill
