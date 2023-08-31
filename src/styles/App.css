@@ -17,7 +17,7 @@
 	--color-cyan: hsl(172, 45%, 58%);
 	--color-dark-purple: hsl(312, 45%, 23%);
 
-	--margin-tablet: 1.5rem;
+	--margin-tablet: 2rem;
 	--margin: 1rem;
 
 	scroll-behavior: smooth;
@@ -32,6 +32,11 @@
 
 .navbar {
 	@apply py-[var(--margin)];
+}
+@media screen and (min-width: 768px) {
+	.app {
+		--margin: var(--margin-tablet);
+	}
 }
 
 .navbar,
@@ -128,14 +133,18 @@
  * Carousel. Using SwiperJS
  */
 .swiper {
-	/* @apply w-full; */
+	overflow: initial;
+	@apply w-4/5;
+}
+.swiper-wrapper {
+	@apply h-[360px];
 }
 .swiper-slide {
-	@apply w-[334px];
+	@apply overflow-hidden rounded-lg max-h-[360px];
 }
 .swiper-slide img {
 	/* @apply w-4/5 mx-auto; */
-	@apply w-full transition rounded-lg hover:scale-110;
+	@apply w-full max-h-[360px] object-cover transition hover:scale-110;
 }
 /* .swiper-slide img {
 	display: block;
@@ -143,6 +152,21 @@
 	height: 100%;
 	object-fit: cover;
 } */
+
+.arrow-button {
+	background: var(--color-black) url("../assets/images/arrow-left-solid.svg")
+		no-repeat center;
+	@apply w-14 h-14 rounded-full transition;
+}
+.arrow-button:hover {
+	background-color: var(--color-purple);
+}
+.arrow-button.arrow-button--left {
+	@apply rotate-0;
+}
+.arrow-button.arrow-button--right {
+	@apply rotate-180;
+}
 
 /**
  * Contact section
