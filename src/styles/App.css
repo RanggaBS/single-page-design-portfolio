@@ -197,16 +197,44 @@
  * Modal
  */
 .modal {
-	display: none;
+	background-color: hsla(0, 0%, 0%, 0.3);
+	/* display: none; */
 }
-.modal.is-open {
+.modal.open {
 	display: block;
 }
+.modal__overlay {
+	background-color: var(--color-white-cream);
+}
 
-.modal__close-button {
+/**
+ * Close button
+ */
+.modal button {
 	background-color: #eee;
 }
-.modal__content input,
-.modal__content textarea {
-	outline: #000 1px;
+.modal button:hover {
+	background-color: rgba(255, 89, 67, 0.2);
+}
+
+/**
+ * Inputs
+ */
+.modal form label > * {
+	border: 1px solid var(--color-gray);
+	@apply font-normal p-2 min-[512px]:p-4 rounded-md;
+}
+.modal form label > *:focus {
+	border-color: dodgerblue;
+}
+
+/**
+ * "Send message" button
+ */
+.modal form button[type="submit"] {
+	color: var(--color-white-cream);
+	background-color: var(--color-black);
+}
+.modal form button[type="submit"]:hover {
+	background-color: var(--color-purple);
 }
