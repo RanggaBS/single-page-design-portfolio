@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import About from "./components/About";
@@ -10,19 +12,28 @@ import ConsultModal from "./components/ConsultModal";
 document.title = "Single page design portfolio";
 
 function App() {
+	const modal = useRef();
+
+	const showModal = (event) => {
+		modal.current.style.display = "block";
+	};
+	const closeModal = (event) => {
+		modal.current.style.display = "none";
+	};
+
 	return (
 		<div className="min-h-screen app overflow-hidden">
-			<Navbar />
+			<Navbar openModalFunc={showModal} />
 			<main className="space-y-24">
 				<Intro />
-				<About />
+				<About openModalFunc={showModal} />
 				<MyWork />
-				<Contact />
+				<Contact openModalFunc={showModal} />
 			</main>
 			<footer className="pt-6 pb-4">
-				<Navbar />
+				<Navbar openModalFunc={showModal} />
 			</footer>
-			<ConsultModal />
+			<ConsultModal refProp={modal} closeCallback={closeModal} />
 		</div>
 	);
 }
