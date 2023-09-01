@@ -21,6 +21,8 @@
 	--margin: 1rem;
 
 	scroll-behavior: smooth;
+
+	--content-max-width: 1110px;
 }
 
 .app {
@@ -44,6 +46,17 @@
 .contact {
 	margin-left: var(--margin);
 	margin-right: var(--margin);
+}
+
+/**
+ * Max width
+ */
+.navbar,
+.intro,
+.about,
+.contact {
+	max-width: var(--content-max-width);
+	@apply lg:px-[var(--margin)] lg:mx-auto;
 }
 
 /**
@@ -88,6 +101,7 @@
 }
 .skill.skill--graphic-design {
 	background-color: var(--color-purple);
+	/* @apply lg:row-start-1 lg:col-start-1; */
 }
 .skill.skill--ui-ux {
 	background-color: var(--color-orange);
@@ -97,19 +111,21 @@
 }
 .skill.skill--illustrations {
 	background-color: var(--color-tomato);
+	@apply lg:row-start-2 lg:col-start-3;
 }
 .skill.skill--photography {
 	background-color: var(--color-cyan);
+	@apply lg:row-start-1 lg:col-start-5;
 }
 .skill.skill--motion-graphics {
 	background-color: var(--color-dark-purple);
 }
 
 .skill.skill--big-square {
-	@apply col-span-2 row-span-2;
+	@apply col-end-[span_2] row-span-2;
 }
 .skill.skill--col-span-2 {
-	@apply col-span-2 aspect-[initial];
+	@apply col-end-[span_2] aspect-[initial];
 }
 
 /**
@@ -134,17 +150,18 @@
  */
 .swiper {
 	overflow: initial;
-	@apply w-4/5;
+	@apply w-[70%] max-w-[560px];
 }
 .swiper-wrapper {
-	@apply h-[360px];
+	@apply flex max-h-[360px];
 }
 .swiper-slide {
+	/* width: auto !important; */
 	@apply overflow-hidden rounded-lg max-h-[360px];
 }
 .swiper-slide img {
 	/* @apply w-4/5 mx-auto; */
-	@apply w-full max-h-[360px] object-cover transition hover:scale-110;
+	@apply object-cover w-full max-w-[560px] max-h-[360px] transition hover:scale-110;
 }
 /* .swiper-slide img {
 	display: block;
@@ -156,7 +173,7 @@
 .arrow-button {
 	background: var(--color-black) url("../assets/images/arrow-left-solid.svg")
 		no-repeat center;
-	@apply w-14 h-14 rounded-full transition;
+	@apply transition rounded-full w-14 h-14;
 }
 .arrow-button:hover {
 	background-color: var(--color-purple);

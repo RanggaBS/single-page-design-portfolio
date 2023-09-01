@@ -3,7 +3,7 @@ import { useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+// import "swiper/css/autoplay";
 
 import imgSlide1 from "../assets/images/image-slide-1.jpg";
 import imgSlide2 from "../assets/images/image-slide-2.jpg";
@@ -11,6 +11,24 @@ import imgSlide3 from "../assets/images/image-slide-3.jpg";
 import imgSlide4 from "../assets/images/image-slide-4.jpg";
 import imgSlide5 from "../assets/images/image-slide-5.jpg";
 import ArrowButton from "./ArrowButton";
+
+const works = [
+	{
+		img: imgSlide1,
+	},
+	{
+		img: imgSlide2,
+	},
+	{
+		img: imgSlide3,
+	},
+	{
+		img: imgSlide4,
+	},
+	{
+		img: imgSlide5,
+	},
+];
 
 const MyWork = () => {
 	const sliderRef = useRef(null);
@@ -45,40 +63,36 @@ const MyWork = () => {
 			</h2>
 
 			{/* SwiperJS */}
-			<p hidden={true} style={{ width: 0, height: 0 }}>
+			<a
+				href="https://swiperjs.com"
+				hidden={true}
+				style={{ width: 0, height: 0 }}
+			>
 				SwiperJS
-			</p>
+			</a>
 			<Swiper
 				ref={sliderRef}
 				// slidesPerView={3}
-				initialSlide={2}
-				spaceBetween={8}
+				// initialSlide={2}
+				spaceBetween={16 * 1.75} // 1.75rem -> 28px
 				centeredSlides={true}
 				loop={true}
 				grabCursor={true}
-				/* modules={[Autoplay]}
-				autoplay={{
+				modules={[Autoplay]}
+				/* autoplay={{
 					delay: 2500,
 					disableOnInteraction: false,
 				}} */
 				wrapperTag="ul"
 				className="works carousel pb-8"
 			>
-				<SwiperSlide tag="li">
-					<img src={imgSlide1} alt="work 1" />
-				</SwiperSlide>
-				<SwiperSlide tag="li">
-					<img src={imgSlide2} alt="work 2" />
-				</SwiperSlide>
-				<SwiperSlide tag="li">
-					<img src={imgSlide3} alt="work 3" />
-				</SwiperSlide>
-				<SwiperSlide tag="li">
-					<img src={imgSlide4} alt="work 4" />
-				</SwiperSlide>
-				<SwiperSlide tag="li">
-					<img src={imgSlide5} alt="work 5" />
-				</SwiperSlide>
+				{works.map((value, index) => {
+					return (
+						<SwiperSlide key={index} tag="li">
+							<img src={value.img} alt={"work " + (index + 1)} />
+						</SwiperSlide>
+					);
+				})}
 			</Swiper>
 			<div className="swiper-buttons space-x-4">
 				{swiperButtons.map((value) => (

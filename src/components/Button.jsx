@@ -6,6 +6,7 @@ const Button = ({ text, href, classModifier }) => {
 			href={href}
 			className={`button ${classModifier}
 			px-7 py-3 rounded-full transition
+			md:px-10 md:py-4
 		`}
 		>
 			{text}

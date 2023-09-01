@@ -47,18 +47,18 @@ const skillsData = [
 
 const Intro = () => {
 	return (
-		<section className="intro pt-4">
+		<section className="pt-4 intro md:pt-8">
 			<header className="text-center heading md:pb-8">
-				<h1 className="pb-4 text-4xl font-bold md:text-5xl md:pb-8">
+				<h1 className="pb-4 text-4xl font-bold md:text-[2.9rem] md:pb-8 lg:text-[4.75rem] lg:leading-none lg:pb-14">
 					Design solutions made easy
 				</h1>
-				<p className="font-medium">
+				<p className="font-medium md:text-[1.2rem] md:mx-10 lg:w-[70%] lg:mx-auto lg:text-2xl">
 					With over ten years of experience in various design
 					disciplines, I&apos;m your one-stop shop for your design
 					needs.
 				</p>
 			</header>
-			<div className="grid grid-cols-2 gap-4 pt-6 font-bold skills md:grid-rows-3 md:grid-cols-4 lg:grid-cols-6">
+			<div className="grid grid-cols-2 gap-4 pt-6 font-bold skills md:grid-cols-4 lg:grid-cols-6">
 				{skillsData.map((skill, index) => {
 					return (
 						<Skill

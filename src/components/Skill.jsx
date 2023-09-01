@@ -7,7 +7,7 @@ const Skill = ({ img, name, classModifier, classes }) => {
 	return (
 		<div
 			className={`skill skill--${skillName} ${classModifier} ${classes}
-      min-h-[10rem] rounded-lg p-4 flex flex-col justify-between aspect-square`}
+      min-h-[10rem] rounded-lg p-4 flex flex-col justify-between`}
 		>
 			<img src={img} alt={name} className="ml-auto skill-img w-min" />
 			<p className="text-[1.625rem] skill-name">{name}</p>
