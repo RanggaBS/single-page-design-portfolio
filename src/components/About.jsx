@@ -1,7 +1,9 @@
+import PropTypes from "prop-types";
+
 import Button from "./Button";
 import imgAmy from "../assets/images/image-amy.webp";
 
-const Hero = () => {
+const About = ({ openModalFunc }) => {
 	return (
 		<section className="text-center about md:text-start md:flex">
 			<picture className="md:flex-1">
@@ -29,12 +31,16 @@ const Hero = () => {
 				</header>
 				<Button
 					text="Free Consultation"
-					href="#contact"
 					classModifier="button--secondary"
+					onClick={openModalFunc}
 				/>
 			</article>
 		</section>
 	);
 };
 
-export default Hero;
+About.propTypes = {
+	openModalFunc: PropTypes.func,
+};
+
+export default About;

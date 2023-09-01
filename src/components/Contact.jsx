@@ -1,6 +1,8 @@
+import PropTypes from "prop-types";
+
 import Button from "./Button";
 
-const Contact = () => {
+const Contact = ({ openModalFunc }) => {
 	return (
 		<section
 			id="contact"
@@ -18,11 +20,15 @@ const Contact = () => {
 			</article>
 			<Button
 				text="Free Consultation"
-				href="#contact"
 				classModifier="button--secondary"
+				onClick={openModalFunc}
 			/>
 		</section>
 	);
+};
+
+Contact.propTypes = {
+	openModalFunc: PropTypes.func,
 };
 
 export default Contact;

@@ -1,22 +1,23 @@
 import PropTypes from "prop-types";
 
-const Button = ({ text, href, classModifier }) => {
+const Button = ({ text, classModifier, onClick }) => {
 	return (
-		<a
-			href={href}
+		<button
+			type="button"
 			className={`button ${classModifier}
 			px-7 py-3 rounded-full transition
 			md:px-10 md:py-4
 		`}
+			onClick={onClick || (() => {})}
 		>
 			{text}
-		</a>
+		</button>
 	);
 };
 Button.propTypes = {
 	text: PropTypes.string,
-	href: PropTypes.string,
 	classModifier: PropTypes.string,
+	onClick: PropTypes.func,
 };
 
 export default Button;
