@@ -79,10 +79,10 @@ const MyWork = () => {
 				loop={true}
 				grabCursor={true}
 				modules={[Autoplay]}
-				/* autoplay={{
+				autoplay={{
 					delay: 2500,
 					disableOnInteraction: false,
-				}} */
+				}}
 				wrapperTag="ul"
 				className="works carousel pb-8"
 			>
